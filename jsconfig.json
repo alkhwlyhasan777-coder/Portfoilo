@@ -1,0 +1,33 @@
+// {
+//     "compilerOptions": {
+//         "checkJs": true,
+//         "jsx": "react-jsx",
+//         "resolveJsonModule": true,
+//         "checkJs": true,
+//         "lib": ["ES6", "DOM", "ES2017"]
+//     },
+//     "include": ["src"],
+//     "exclude": ["node_modules"]
+// }
+{
+  "compilerOptions": {
+    "checkJs": true,
+    // "baseUrl": ".",
+    "jsx": "react-jsx",
+    "lib": [
+      "ES6",
+      "DOM",
+      "ES2017"
+    ],
+
+        "resolveJsonModule": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ]
+}

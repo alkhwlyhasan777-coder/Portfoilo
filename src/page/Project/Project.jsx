@@ -1,3 +1,8 @@
+import NewVista from "../../assets/image/new-vista.png";
+import Crud from "../../assets/image/crud.png";
+import Store from "../../assets/image/store.png";
+import Author from "../../assets/image/author.webp";
+import Portfolio from "../../assets/image/portfolio.png";
 import {
   FaEnvelope,
   FaExternalLinkAlt,
@@ -8,21 +13,13 @@ import {
 
 
 function Project() {
-  const listImages = [
-  {
-    NewVista: "../../../public/new-vista.png",
-    Curd: "../../../public/crud.png",
-    Store: "../../../public/store.png",
-    Auther: "../../../public/author.webp",
-    Portfolio: "../../../public/portfolio.png",
-  },
-];
+
   const projectList = [
     {
       title: "website New Vista",
       description:
         "A website for a company offering tourism and travel services.",
-      image: listImages[0].NewVista,
+      image: NewVista,
       link: "https://alkhwlyhasan777-coder.github.io/New-Vista/",
       tools: ["HTML", "CSS", "JavaScript", "responsive design"],
     },
@@ -30,7 +27,7 @@ function Project() {
       title: "Task Manager App",
       description:
         "A web application that allows users to manage their tasks and to-do lists.",
-      image: listImages[0].Curd,
+      image: Crud,
       link: "https://alkhwlyhasan777-coder.github.io/edit--crud/",
       tools: ["HTML5", "CSS", "JavaScript", "LocalStorge", "responsive design"],
     },
@@ -38,7 +35,7 @@ function Project() {
       title: "website Auther",
       description:
         "A website for a author to showcase their work and connect with readers.",
-      image: listImages[0].Auther,
+      image: Author,
       link: "https://alkhwlyhasan777-coder.github.io/Author/",
       tools: ["HTML5", "CSS", "JavaScript", "responsive design"],
     },
@@ -46,7 +43,7 @@ function Project() {
       title: "website E-commerce",
       description: "An online store for selling products and services.",
       link: "https://e-commerce-six-chi-27.vercel.app/",
-      image: listImages[0].Store,
+      image: Store,
       tools: [
         "HTML5",
         "CSS",
@@ -61,7 +58,7 @@ function Project() {
       description:
         "A personal website to showcase my work and skills as a front-end developer.",
       link: "https://alkhwlyhasan777-coder.github.io/Myportfolio-/",
-      image: listImages[0].Portfolio,
+      image: Portfolio,
       tools: ["HTML5", "CSS", "JavaScript", "responsive design"],
     },
   ];

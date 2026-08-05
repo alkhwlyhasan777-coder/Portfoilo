@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import image from "../../assets/image/myImage.png";
 // import { CiLight } from "react-icons/ci";
 // import { MdDarkMode } from "react-icons/md";
 import { FaThList } from "react-icons/fa";
@@ -15,7 +16,7 @@ function Header() {
   //   setDarkMode((prev) => !prev);
   //   document.body.classList.toggle("dark");
   // };
-let image = "../../image/myImage.png"
+
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">

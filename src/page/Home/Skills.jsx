@@ -104,20 +104,44 @@ function Skills() {
                 {category.title}
               </h3>
 
-              <div className="grid grid-cols-2 gap-4">
-                {category.items.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex items-center gap-3 rounded-xl bg-white/5 p-4 transition hover:bg-cyan-500/10"
-                  >
-                    <span className="text-3xl text-cyan-400">
-                      {skill.icon}
-                    </span>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-2">
+  {category.items.map((skill) => (
+    <div
+      key={skill.name}
+      className="
+        group
+        flex items-center gap-3
+        rounded-xl
+        border border-white/10
+        bg-white/5
+        p-3
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:border-cyan-400/30
+        hover:bg-cyan-500/10
+      "
+    >
+      <span
+        className="
+          flex h-10 w-10 shrink-0
+          items-center justify-center
+          rounded-lg
+          bg-cyan-500/10
+          text-2xl text-cyan-400
+          transition-all duration-300
+          group-hover:bg-cyan-500/20
+          group-hover:scale-110
+        "
+      >
+        {skill.icon}
+      </span>
 
-                    <span>{skill.name}</span>
-                  </div>
-                ))}
-              </div>
+      <span className="truncate text-sm font-medium text-white sm:text-base">
+        {skill.name}
+      </span>
+    </div>
+  ))}
+</div>
             </div>
           ))}
         </div>

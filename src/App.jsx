@@ -7,6 +7,7 @@ import Home from "./page/Home/Home";
 import About from "./page/about/About";
 import Projects from "./page/Project/Project";
 import Contact from "./page/contact/contact";
+import WhatsAppButton from "./components/ui/whatsappButton";
 
 function App() {
   return (
@@ -14,7 +15,6 @@ function App() {
       <div className="container-fluid">
         <SplashCursor />
         <Header />
-
         <Routes>
           {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/" element={<Home />} />
@@ -24,6 +24,7 @@ function App() {
         </Routes>
 
       </div>
+        <WhatsAppButton/>
     </BrowserRouter>
   );
 }

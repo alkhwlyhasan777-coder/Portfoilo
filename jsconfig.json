@@ -1,33 +1,33 @@
+
 // {
-//     "compilerOptions": {
-//         "checkJs": true,
-//         "jsx": "react-jsx",
+//   "compilerOptions": {
+//     "checkJs": true,
+
+//     "jsx": "react-jsx",
+//     "lib": [
+//       "ES6",
+//       "DOM",
+//       "ES2017"
+//     ],
+
 //         "resolveJsonModule": true,
-//         "checkJs": true,
-//         "lib": ["ES6", "DOM", "ES2017"]
-//     },
-//     "include": ["src"],
-//     "exclude": ["node_modules"]
+//     "paths": {
+//       "@/*": [
+//         "src/"
+//       ]
+//     }
+//   },
+//   "include": [
+//     "src"
+//   ]
 // }
 {
   "compilerOptions": {
-    "checkJs": true,
-    // "baseUrl": ".",
-    "jsx": "react-jsx",
-    "lib": [
-      "ES6",
-      "DOM",
-      "ES2017"
-    ],
-
-        "resolveJsonModule": true,
+      "checkJs": false,
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*"]
 }

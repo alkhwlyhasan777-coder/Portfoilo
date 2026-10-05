@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { FaCode, FaLaptopCode, FaRocket } from "react-icons/fa";
-import { numberOfProjects } from "../Project/Project";
+import {projectList} from "../Project/ProjectData";
 function About() {
   const aboutRef = useRef(null);
   return (
@@ -46,7 +46,7 @@ function About() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <div className="rounded-xl border border-white/10 bg-white/5 px-5 py-4">
-                <h4 className="text-2xl font-bold text-cyan-400">{numberOfProjects}+</h4>
+                <h4 className="text-2xl font-bold text-cyan-400">{projectList.length}+</h4>
                 <p className="text-sm text-slate-400">Projects Built</p>
               </div>
 

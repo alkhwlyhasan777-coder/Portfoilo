@@ -1,22 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import image from "../../assets/image/myImage.png";
-// import { CiLight } from "react-icons/ci";
-// import { MdDarkMode } from "react-icons/md";
 import { FaThList } from "react-icons/fa";
 function Header() {
   const link = ["home", "About my work", "projects", "contact"];
-  // const [darkMode, setDarkMode] = useState(true);
   const [media, setMedia] = useState(false);
 
   const handleMedia = () => {
     setMedia((prev) => !prev);
   };
-  // const handleDarkMode = () => {
-  //   setDarkMode((prev) => !prev);
-  //   document.body.classList.toggle("dark");
-  // };
-
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
@@ -26,13 +18,11 @@ function Header() {
             alt="Logo"
             className="h-10 w-10 rounded-full object-cover "
           />
-
           <h1 className="text-2xl font-bold tracking-wide text-white">
             Hassan
             <span className="text-cyan-400">.</span>
           </h1>
         </a>
-
         <nav className="flex items-center gap-6">
           <button
             onClick={handleMedia}
@@ -73,14 +63,6 @@ function Header() {
             </NavLink>)}
           </ul>
         </nav>
-
-        {/* Dark Mode
-        <button
-          onClick={handleDarkMode}
-          className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-all duration-300 hover:rotate-180 hover:bg-cyan-500"
-        >
-          {darkMode ? <MdDarkMode size={22} /> : <CiLight size={22} />}
-        </button> */}
       </div>
     </header>
   );

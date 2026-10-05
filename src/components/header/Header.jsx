@@ -49,6 +49,7 @@ function Header() {
           >
             {link.map((item) => 
             <NavLink
+              key={item}
               to={
                 item === "home"
                   ? "/"

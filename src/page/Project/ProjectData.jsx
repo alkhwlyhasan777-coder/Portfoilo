@@ -23,6 +23,21 @@ export const projectList = [
     tools: ["HTML5", "CSS", "JavaScript", "responsive design", "React", "React Animation"],
   },
   {
+    title: " website Order.UK",
+    description: "",
+    link: "https://orderuk-rho.vercel.app/",
+    image: order,
+    tools: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "Swiper.js",
+      "Lucide React",
+      "Responsive Design",
+    ],
+  },
+  {
     title: "website Dental clinic",
     description:
       "A website for a dental clinic that provides information about the clinic, services, and contact details.",

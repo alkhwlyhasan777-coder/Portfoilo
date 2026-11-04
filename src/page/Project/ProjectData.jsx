@@ -3,9 +3,10 @@ import Crud from "../../assets/image/crud.png";
 import Store from "../../assets/image/store.png";
 import Author from "../../assets/image/author.webp";
 import Portfolio from "../../assets/image/portfolio.png";
-import order from "../../assets/image/order.uk/png"
+import order from "../../assets/image/order.uk.png"
 import prayerTimes from "../../assets/image/Prayer Times App Showcase.png";
 import dentalClinic from "../../assets/image/SmileCare Dental Website Showcase.png";
+import NexusDashboard from "../../assets/image/dashboard.png";
 export const projectList = [
   {
     title: "Prayer Times",
@@ -14,6 +15,22 @@ export const projectList = [
     link: "https://prayer-times-beze.vercel.app/",
     image: prayerTimes,
     tools: ["HTML5", "CSS", "JavaScript", "responsive design", "Api", "React"],
+  },
+  {
+    title: "Nexus Dashboard",
+    description:
+      "A modern SaaS admin dashboard built with React.js, featuring interactive analytics, customer management, leads and deals tracking, sales pipeline, revenue reports, and responsive UI.",
+    link: "https://nexus-dashboard-five-rho.vercel.app/",
+    image: NexusDashboard,
+    tools: [
+      "React.js",
+      "JavaScript",
+      "React Router",
+      "Vite",
+      "Tailwind CSS",
+      "Responsive Design",
+      "Git & GitHub",
+    ],
   },
   {
     title: "website Portfolio From React",
@@ -56,19 +73,19 @@ export const projectList = [
     tools: ["HTML5", "CSS", "JavaScript", "responsive design"],
   },
   {
-    title :" website Order.UK",
-    description :"",
-    link :"https://orderuk-rho.vercel.app/",
-    image :order , 
+    title: " website Order.UK",
+    description: "",
+    link: "https://orderuk-rho.vercel.app/",
+    image: order,
     tools: [
-    "React",
-    "Vite",
-    "Tailwind CSS",
-    "React Router",
-    "Swiper.js",
-    "Lucide React",
-    "Responsive Design",
-  ],
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "Swiper.js",
+      "Lucide React",
+      "Responsive Design",
+    ],
   },
   {
     title: "website E-commerce",
@@ -91,5 +108,5 @@ export const projectList = [
     link: "https://alkhwlyhasan777-coder.github.io/Myportfolio-/",
     image: Portfolio,
     tools: ["HTML5", "CSS", "JavaScript", "responsive design"],
-  }
+  },
 ];

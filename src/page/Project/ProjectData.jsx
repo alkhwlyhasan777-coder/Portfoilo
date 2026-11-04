@@ -88,21 +88,6 @@ export const projectList = [
     tools: ["HTML5", "CSS", "JavaScript", "responsive design"],
   },
   {
-    title: " website Order.UK",
-    description: "",
-    link: "https://orderuk-rho.vercel.app/",
-    image: order,
-    tools: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "React Router",
-      "Swiper.js",
-      "Lucide React",
-      "Responsive Design",
-    ],
-  },
-  {
     title: "website E-commerce",
     description: "An online store for selling products and services.",
     link: "https://e-commerce-six-chi-27.vercel.app/",
@@ -115,13 +100,5 @@ export const projectList = [
       "Api",
       "responsive design",
     ],
-  },
-  {
-    title: "website Portfolio",
-    description:
-      "A personal website to showcase my work and skills as a front-end developer.",
-    link: "https://alkhwlyhasan777-coder.github.io/Myportfolio-/",
-    image: Portfolio,
-    tools: ["HTML5", "CSS", "JavaScript", "responsive design"],
   },
 ];

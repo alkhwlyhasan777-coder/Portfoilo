@@ -18,6 +18,7 @@ import {
   SiVite,
   SiTypescript,
 } from "react-icons/si";
+import { contact } from "../../data/contact";
 
 const skills = [
   {
@@ -49,45 +50,24 @@ const skills = [
   },
 ];
 
-  const socialMMedia = [
-    {
-      name: "GitHub",
-      icon: <FaGithub />,
-      link: "https://github.com/alkhwlyhasan777-coder",
-    },
-    {
-      name: "LinkedIn",
-      icon: <FaLinkedin />,
-      link: "https://www.linkedin.com/in/hasan-alkhwly/",
-    },
-    {
-      name: "WhatsApp",
-      icon: <FaWhatsapp />,
-      link: "https://wa.me/1234567890",
-    },
-    {
-      name: "Email",
-      icon: <FaEnvelope />,
-      link: "https://mail.google.com/mail/?view=cm&fs=1&to=alkhwlyhasan777@gmail.com",
-    },
-  ];
+const socialMedia = [
+  { name: "GitHub", icon: <FaGithub />, link: contact.github },
+  { name: "LinkedIn", icon: <FaLinkedin />, link: contact.linkedin },
+  { name: "WhatsApp", icon: <FaWhatsapp />, link: contact.whatsapp.href },
+  { name: "Email", icon: <FaEnvelope />, link: contact.email.href },
+];
 
 function Skills() {
   return (
-    <section
-      id="skills"
-      className="bg-slate-950 py-6 px-6 text-white"
-    >
+    <section id="skills" className="bg-slate-950 px-6 py-6 text-white">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-400">
             Professional Skills
           </span>
-
           <h2 className="mt-6 text-5xl font-bold">
             Technologies I Work With
           </h2>
-
           <p className="mx-auto mt-5 max-w-2xl text-slate-400">
             I build modern, responsive, and scalable web applications using
             the latest frontend technologies and development tools.
@@ -104,65 +84,43 @@ function Skills() {
                 {category.title}
               </h3>
 
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-2">
-  {category.items.map((skill) => (
-    <div
-      key={skill.name}
-      className="
-        group
-        flex items-center gap-3
-        rounded-xl
-        border border-white/10
-        bg-white/5
-        p-3
-        transition-all duration-300
-        hover:-translate-y-1
-        hover:border-cyan-400/30
-        hover:bg-cyan-500/10
-      "
-    >
-      <span
-        className="
-          flex h-10 w-10 shrink-0
-          items-center justify-center
-          rounded-lg
-          bg-cyan-500/10
-          text-2xl text-cyan-400
-          transition-all duration-300
-          group-hover:bg-cyan-500/20
-          group-hover:scale-110
-        "
-      >
-        {skill.icon}
-      </span>
-
-      <span className="truncate text-sm font-medium text-white sm:text-base">
-        {skill.name}
-      </span>
-    </div>
-  ))}
-</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {category.items.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-cyan-500/10"
+                  >
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 text-2xl text-cyan-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-500/20">
+                      {skill.icon}
+                    </span>
+                    <span className="truncate text-sm font-medium text-white sm:text-base">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </div>
-              <div className="mt-24 border-t border-slate-800 pt-12">
-          <h3 className="mb-8 text-center text-2xl font-bold">Let's Connect</h3>
 
-          <div className="flex justify-center gap-6">
-            {socialMMedia.map((social) => (
-              <a
-                key={social.name}
-                href={social.link}
-                target="_blank"
-                rel="noreferrer noreferrer"
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-2xl transition hover:border-cyan-400 hover:bg-cyan-500 hover:text-white"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
+      <div className="mt-24 border-t border-slate-800 pt-12">
+        <h3 className="mb-8 text-center text-2xl font-bold">Let's Connect</h3>
+        <div className="flex justify-center gap-6">
+          {socialMedia.map((social) => (
+            <a
+              key={social.name}
+              href={social.link}
+              target={social.name === "Email" ? undefined : "_blank"}
+              rel={social.name === "Email" ? undefined : "noopener noreferrer"}
+              aria-label={social.name}
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-2xl transition hover:border-cyan-400 hover:bg-cyan-500 hover:text-white"
+            >
+              {social.icon}
+            </a>
+          ))}
         </div>
+      </div>
     </section>
   );
 }

@@ -1,10 +1,15 @@
 import emailjs from "@emailjs/browser";
 
 export const sendEmail = (form) => {
-  return emailjs.sendForm(
-    import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    form,
-    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  );
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  if (!serviceId || !templateId || !publicKey) {
+    return Promise.reject(
+      new Error("Email service is not configured. Check the EmailJS environment variables.")
+    );
+  }
+
+  return emailjs.sendForm(serviceId, templateId, form, publicKey);
 };

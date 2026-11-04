@@ -3,12 +3,12 @@ import { useEffect, useRef } from 'react';
 
 function SplashCursor({
   SIM_RESOLUTION = 128,
-  DYE_RESOLUTION = 1440,
+  DYE_RESOLUTION = 720,
   CAPTURE_RESOLUTION = 512,
   DENSITY_DISSIPATION = 3.5,
   VELOCITY_DISSIPATION = 2,
   PRESSURE = 0.1,
-  PRESSURE_ITERATIONS = 20,
+  PRESSURE_ITERATIONS = 12,
   CURL = 3,
   SPLAT_RADIUS = 0.2,
   SPLAT_FORCE = 6000,
@@ -25,6 +25,7 @@ function SplashCursor({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
 
     // Track if the effect is still active for cleanup
     let isActive = true;
@@ -65,6 +66,7 @@ function SplashCursor({
     let pointers = [new pointerPrototype()];
 
     const { gl, ext } = getWebGLContext(canvas);
+    if (!gl || !ext) return;
     if (!ext.supportLinearFiltering) {
       config.DYE_RESOLUTION = 256;
       config.SHADING = false;
@@ -81,6 +83,7 @@ function SplashCursor({
       let gl = canvas.getContext('webgl2', params);
       const isWebGL2 = !!gl;
       if (!isWebGL2) gl = canvas.getContext('webgl', params) || canvas.getContext('experimental-webgl', params);
+      if (!gl) return { gl: null, ext: null };
 
       let halfFloat;
       let supportLinearFiltering;
@@ -700,6 +703,10 @@ function SplashCursor({
 
     function updateFrame() {
       if (!isActive) return;
+      if (document.hidden) {
+        animationFrameId.current = null;
+        return;
+      }
       const dt = calcDeltaTime();
       if (resizeCanvas()) initFramebuffers();
       updateColors(dt);
@@ -1073,6 +1080,15 @@ function SplashCursor({
       }
     }
 
+    // Pause the simulation while the page is in the background.
+    function handleVisibilityChange() {
+      if (!document.hidden && isActive && animationFrameId.current === null) {
+        lastUpdateTime = Date.now();
+        animationFrameId.current = requestAnimationFrame(updateFrame);
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     // Add event listeners
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mousemove', handleMouseMove);
@@ -1093,6 +1109,7 @@ function SplashCursor({
       }
 
       // Remove event listeners
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchstart', handleTouchStart);

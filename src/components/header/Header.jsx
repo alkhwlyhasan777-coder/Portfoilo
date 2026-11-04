@@ -61,8 +61,8 @@ function Header() {
             id="primary-navigation"
             className={`absolute left-0 top-20 flex w-full flex-col gap-3 border-b border-white/10 bg-slate-950 p-6 transition-all duration-300 lg:static lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:border-none lg:bg-transparent lg:p-0 ${
               isMenuOpen
-                ? "translate-y-0 opacity-100"
-                : "pointer-events-none -translate-y-8 opacity-0 lg:pointer-events-auto lg:translate-y-0 lg:opacity-100"
+                ? "visible translate-y-0 opacity-100"
+                : "invisible -translate-y-8 opacity-0 lg:visible lg:translate-y-0 lg:opacity-100"
             }`}
           >
             {navigation.map(({ label, to, end }) => (

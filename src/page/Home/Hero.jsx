@@ -50,10 +50,8 @@ function Hero() {
             <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl" />
             <img
               src="/myImage.png"
-              alt="Hassan - Front-End Developer"
-              loading="eager"
-              fetchPriority="high"
-              className="relative z-10 h-[280px] w-[280px] rounded-full border-4 border-cyan-400/30 object-cover object-center shadow-[0_20px_80px_rgba(6,182,212,.25)] sm:h-[340px] sm:w-[340px] lg:h-[360px] lg:w-[360px]"
+              alt="Hassan"
+              className="relative z-10 w-[360px] rounded-full drop-shadow-[0_20px_80px_rgba(6,182,212,.45)]"
             />
           </div>
         </div>

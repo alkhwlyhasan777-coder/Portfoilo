@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Skills from "./Skills";
 
 function Hero() {
@@ -30,19 +31,19 @@ function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#projects"
+              <Link
+                to="/projects"
                 className="rounded-xl bg-cyan-500 px-8 py-4 font-semibold text-white transition-colors duration-300 hover:bg-cyan-400 hover:shadow-[0_10px_30px_rgba(6,182,212,.4)]"
               >
                 View Projects
-              </a>
+              </Link>
 
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="rounded-xl border border-white/20 px-8 py-4 text-white transition-colors duration-300 hover:border-cyan-400 hover:bg-white/5"
               >
                 Contact Me
-              </a>
+              </Link>
             </div>
           </div>
 
